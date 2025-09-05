@@ -2,7 +2,10 @@
 echo "Running composer"
 composer install --no-dev --working-dir=/var/www/html
 
-"echo" "Running NPM"
+echo "Installing NPM Dependencies"
+npm install
+
+echo "Running NPM Build"
 npm run build
 
 echo "Caching config..."
