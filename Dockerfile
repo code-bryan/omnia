@@ -1,6 +1,21 @@
+# Stage 1: Build assets with Node
+FROM node:18 as frontend
+
+WORKDIR /app
+COPY package*.json vite.config.* ./
+RUN npm install
+COPY resources/ resources/
+COPY public/ public/
+RUN npm run build
+
+# Stage 2: PHP + Nginx
 FROM richarvey/nginx-php-fpm:3.1.6
 
+# Copy app source
 COPY . .
+
+# Copy built assets from Stage 1
+COPY --from=frontend /app/public/build /var/www/html/public/build
 
 # Image config
 ENV SKIP_COMPOSER 1
