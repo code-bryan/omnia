@@ -19,7 +19,7 @@ test('Show the login page', function () {
     $response = $this->get(route('auth.login.index'));
 
     $response->assertStatus(200);
-    $response->assertSee('auth.login.title');
+    $response->assertSee(__('auth.login.title'));
 });
 
 test('login in with valid credentials', function () {
