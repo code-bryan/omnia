@@ -11,8 +11,8 @@ class Container extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $label,
         public string $name,
+        public string | null $label = null,
         public bool $required = false,
     ) {
         //

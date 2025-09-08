@@ -25,7 +25,7 @@
                     </label>
                 </div>
                 <div class="text-sm">
-                    <a class="font-medium text-blue-600 hover:text-blue-500" href="#">
+                    <a class="font-medium text-blue-600 hover:text-blue-500" href={{ route('auth.forgot.index') }}>
                         {{ __('auth.login.forgot') }}
                     </a>
                 </div>

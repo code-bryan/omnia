@@ -1,7 +1,10 @@
 <div class="flex flex-col space-y-1">
-    <label class="block text-sm font-medium text-gray-700" for="{{ $name }}">
-        {{ $label }} {{ $required ? '*' : null }}
-    </label>
+    @isset($label)
+        <label class="block text-sm font-medium text-gray-700" for="{{ $name }}">
+            {{ $label }} {{ $required ? '*' : null }}
+        </label>
+    @endisset
+
     {{ $slot }}
 
     @error($name)

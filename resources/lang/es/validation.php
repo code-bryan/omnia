@@ -3,11 +3,11 @@
 return [
     "custom" => [
         "email"    => [
-            "required" => "Email is required to log in.",
-            "email"    => "Please enter a valid email.",
+            "required" => "El correo electrónico es obligatorio para iniciar sesión.",
+            "email"    => "Por favor ingresa un correo electrónico válido.",
         ],
         "password" => [
-            "required" => "Password cannot be empty.",
+            "required" => "La contraseña no puede estar vacía.",
         ],
     ],
 ];

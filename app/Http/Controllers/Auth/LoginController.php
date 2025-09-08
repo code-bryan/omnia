@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
+use App\Http\Requests\Auth\LoginRequest;
 use Auth;
 
 class LoginController extends Controller
@@ -18,7 +18,7 @@ class LoginController extends Controller
 
     /**
      * Login check method
-     * @param \App\Http\Requests\LoginRequest $request
+     * @param \App\Http\Requests\Auth\LoginRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(LoginRequest $request)
@@ -26,13 +26,9 @@ class LoginController extends Controller
         $credentials = $request->only("email", "password");
         $remember    = $request->boolean("remember");
 
-        try {
-            if (Auth::attempt($credentials, $remember)) {
-                $request->session()->regenerate();
-                return redirect()->intended("/");
-            }
-        } catch (\Throwable $e) {
-            dd($e->getMessage(), $e->getTraceAsString());
+        if (Auth::attempt($credentials, $remember)) {
+            $request->session()->regenerate();
+            return redirect()->intended("/");
         }
 
         $errors = ["auth" => __("auth.login.error")];
