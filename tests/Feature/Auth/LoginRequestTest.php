@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Requests\LoginRequest;
+use App\Http\Requests\Auth\LoginRequest;
 
 test('passes validation with valid data', function () {
     $data = [
