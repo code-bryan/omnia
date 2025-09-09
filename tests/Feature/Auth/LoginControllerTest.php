@@ -1,16 +1,5 @@
 <?php
 
-use App\Models\Company;
-use App\Models\User;
-function user()
-{
-    $company = Company::factory()->create();
-    return User::factory()->create([
-        "email"      => "email@test.in",
-        'company_id' => $company->id,
-    ]);
-}
-
 beforeEach(function () {
     Auth::logout();
 });

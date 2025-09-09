@@ -2,7 +2,7 @@
 
 use App\Http\Requests\LoginRequest;
 
-test('passes validation wtesth valid data', function () {
+test('passes validation with valid data', function () {
     $data = [
         'email'    => 'test@example.com',
         'password' => 'secret123',
