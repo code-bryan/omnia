@@ -40,4 +40,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Permission::class, 'permission_user');
     }
+
+    public function initials(): string
+    {
+        $firstname = substr($this->firstname, 0, 1);
+        $lastname  = substr($this->lastname, 0, 1);
+
+        return strtoupper("$firstname$lastname");
+    }
 }

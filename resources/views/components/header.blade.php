@@ -15,8 +15,10 @@
             <span class="material-symbols-outlined">settings</span>
         </button>
 
-        <div class="flex items-center justify-center size-10 rounded-full bg-blue-100">
-            <span class="text-blue-500 font-medium">BA</span>
-        </div>
+        <x-ui.dropdown :items="$userActions">
+            <div class="flex items-center justify-center size-10 rounded-full bg-blue-100 cursor-pointer select-none">
+                <span class="text-blue-500 font-medium">{{ auth()->user()->initials() }}</span>
+            </div>
+        </x-ui.dropdown>
     </div>
 </header>
