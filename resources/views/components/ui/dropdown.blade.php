@@ -11,7 +11,7 @@
                 <div class="border-t border-gray-200"></div>
             @else
                 <a class="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" href="#"
-                    id="user-menu-item-2" role="menuitem" tabindex="-1">
+                    id="{{ $item->key }}" tabindex="-1">
                     <span class="material-symbols-outlined text-base">{{ $item->icon }}</span>
                     {{ $item->key }}
                 </a>
