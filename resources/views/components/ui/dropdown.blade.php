@@ -1,10 +1,10 @@
-<div class="relative">
-    <div>
+<div class="relative" data-controller="dropdown">
+    <div data-action="click->dropdown#toggle">
         {{ $slot }}
     </div>
 
-    <div
-        class="absolute right-1 mt-1.5 w-64 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-gray-200 ring-opacity-5 focus:outline-none z-10">
+    <div data-dropdown-target="options"
+        class="absolute hidden right-1 mt-1.5 w-64 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-gray-200 ring-opacity-5 focus:outline-none z-10">
 
         @foreach ($items as $item)
             @if ($item instanceof \App\View\SeparatorItem)
